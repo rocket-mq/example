@@ -1,0 +1,12 @@
+{
+  "endpoint": "",
+  "accessKey": "",
+  "secretKey": "",
+  "topicNormal": "test-1",
+  "topicDelay": "test-2",
+  "topicGlobalFifo": "test-3",
+  "topicTransaction": "test-4",
+  "topicRegionFifo": "test-5",
+  "instanceId": "",
+  "groupId": "GID_test_http"
+}

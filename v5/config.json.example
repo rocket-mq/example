@@ -1,0 +1,11 @@
+{
+  "endpoint": "",
+  "accessKey": "",
+  "secretKey": "",
+  "nameSpace": "",
+  "consumeGroup": "group-test",
+  "topicNormal": "test-1",
+  "topicDelay": "test-2",
+  "topicFifo": "test-3",
+  "topicTransaction": "test-4"
+}
