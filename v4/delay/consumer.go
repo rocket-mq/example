@@ -38,7 +38,7 @@ func main() {
 	var n int32
 
 	for {
-		c.Receive(3, 3, func(cme mq_http_sdk.ConsumeMessageEntry) {
+		if err = c.Receive(3, 3, func(cme mq_http_sdk.ConsumeMessageEntry) {
 			atomic.AddInt32(&n, 1)
 			fmt.Println(
 				cme.MessageId, " ---- ",
@@ -50,7 +50,10 @@ func main() {
 				atomic.LoadInt32(&n), " ---- ",
 				time.Now().Format(time.DateTime),
 			)
-		})
+		}); err != nil {
+			panic(err)
+			return
+		}
 	}
 
 }
