@@ -5,7 +5,7 @@ go 1.24.0
 require (
 	github.com/aliyunmq/mq-http-go-sdk v1.0.3
 	github.com/apache/rocketmq-clients/golang/v5 v5.1.1-rc1
-	github.com/rocket-mq/rocket-mq v1.1.2
+	github.com/rocket-mq/rocket-mq v1.1.3
 )
 
 require (
