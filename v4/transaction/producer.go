@@ -65,7 +65,7 @@ func main() {
 			message.WithTag("test-4-tag"),
 			message.WithKey("test-4-key"),
 			message.WithProperties(map[string]string{"time": time.Now().Format("20060102150405")}),
-			message.WithTransCheckImmunityTime(15),
+			message.WithTransCheckImmunityTime(15), // 事务消息必传，否则升级为普通消息，自动提交事务
 		)
 		var pmr mq_http_sdk.PublishMessageResponse
 		if pmr, err = p.PublishTransMessage(msg); err != nil {
