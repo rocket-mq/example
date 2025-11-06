@@ -41,7 +41,9 @@ func main() {
 		return
 	}
 
-	consumer, err := v5.New(
+	ch := make(chan struct{})
+
+	err = v5.New(
 		data.Endpoint,
 		data.AccessKey,
 		data.SecretKey,
@@ -50,13 +52,13 @@ func main() {
 		v5.WithAwaitDuration(5*time.Second),
 		v5.WithNameSpace(data.NameSpace), // 外网必填,内网选填
 		v5.WithDebug(data.Debug),
-	).PushConsumer(20, 1024, consume)
+	).PushConsumer(20, 1024, consume, ch)
 	if err != nil {
 		panic(err)
 		return
 	}
 
-	defer consumer.Close()
-
 	time.Sleep(time.Hour * 72)
+
+	ch <- struct{}{}
 }
