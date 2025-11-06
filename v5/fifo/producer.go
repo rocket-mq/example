@@ -42,7 +42,7 @@ func main() {
 		data.SecretKey,
 		topics,
 		v5.WithNameSpace(data.NameSpace), // 外网必填,内网选填
-		v5.WithDebug(true),
+		v5.WithDebug(data.Debug),
 	).Producer()
 	if err != nil {
 		panic(err)

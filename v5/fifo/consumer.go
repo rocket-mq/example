@@ -41,7 +41,7 @@ func main() {
 		v5.WithConsumerGroup(data.ConsumeGroup),
 		v5.WithAwaitDuration(5*time.Second),
 		v5.WithNameSpace(data.NameSpace), // 外网必填,内网选填
-		v5.WithDebug(false),
+		v5.WithDebug(data.Debug),
 	).SimpleConsumer()
 	if err != nil {
 		panic(err)

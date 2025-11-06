@@ -1,6 +1,7 @@
 package v5
 
 type Config struct {
+	Debug            bool   `json:"debug"`
 	Endpoint         string `json:"endpoint"`
 	AccessKey        string `json:"accessKey"`
 	SecretKey        string `json:"secretKey"`
